@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add New Student</title>
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+    
+        /* Body Styling */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #e0f7fa; /* Light blue background, resembling the ocean */
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+    
+        /* Container Styling */
+        .container {
+            background-color: #ffffff; /* White background for the form */
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            width: 400px;
+            max-width: 100%;
+        }
+    
+        /* Heading */
+        h1 {
+            text-align: center;
+            color: #00838f; /* Deep ocean blue */
+            margin-bottom: 20px;
+        }
+    
+        /* Form Styling */
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+    
+        form label {
+            font-weight: bold;
+            margin-bottom: 5px;
+            color: #00838f; /* Ocean blue */
+        }
+    
+        form input {
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #b2ebf2; /* Light cyan blue border */
+            border-radius: 4px;
+            font-size: 16px;
+            outline: none;
+            background-color: #e0f7fa; /* Subtle ocean background for inputs */
+        }
+    
+        form input:focus {
+            border-color: #00796b; /* Sea green for focused input fields */
+            box-shadow: 0 0 5px rgba(0, 150, 136, 0.5); /* Sea green glow */
+        }
+    
+        /* Button Styling */
+        button {
+            padding: 12px;
+            background-color: #00796b; /* Sea green button */
+            color: white;
+            font-size: 16px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+    
+        button:hover {
+            background-color: #004d40; /* Darker sea green on hover */
+        }
+    
+        /* Extra Styling for Error/Success Messages */
+        .success {
+            color: #4caf50; /* Ocean-inspired success color */
+            font-weight: bold;
+            text-align: center;
+            margin-top: 20px;
+        }
+    
+        .error {
+            color: #e57373; /* Coral red for errors */
+            font-weight: bold;
+            text-align: center;
+            margin-top: 20px;
+        }
+    
+        /* Responsive */
+        @media (max-width: 500px) {
+            .container {
+                width: 90%;
+                padding: 20px;
+            }
+        }
+    </style>
+    
+</head>
+<body>
+    <div class="container">
+        <h1>Add New Student</h1>
+        <form method="POST">
+            {% csrf_token %}
+            
+            <!-- Name Field -->
+            <label for="name">Name:</label>
+            <input type="text" name="name" required><br>
+
+            <!-- Subject Field -->
+            <label for="subject">Subject:</label>
+            <input type="text" name="subject" required><br>
+            
+            <!-- New Subject Code Field -->
+            <label for="subject_code">Subject Code:</label>
+            <input type="text" name="subject_code" required><br>
+
+            <!-- USN Field -->
+            <label for="usn">USN:</label>
+            <input type="text" name="usn" required><br>
+
+            <!-- Semester Field -->
+            <label for="semester">Semester:</label>
+            <input type="text" name="semester" required><br>
+
+            <!-- Marks Field -->
+            <label for="marks">Marks:</label>
+            <input type="number" name="marks" required><br>
+
+            <!-- Faculty Field -->
+            <label for="faculty">Faculty:</label>
+            <input type="text" name="faculty" required><br>
+            
+            <!-- Submit Button -->
+            <button type="submit">Add Student</button>
+        </form>
+    </div>
+</body>
+</html>
